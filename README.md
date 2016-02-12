@@ -12,7 +12,7 @@ This is a gradle based project so to build make sure you have gradle installed a
 
 Once you have a jar, you need to add it to the build path of your external (third-party) application. Follow the sample code below for more details.
 
-```
+```java
 
 import com.yoelnunez.mobilefirst.analytics.AnalyticsAPI;
 import com.yoelnunez.mobilefirst.analytics.exceptions.MissingServerContextException;
@@ -67,8 +67,6 @@ public class MyCustomApplication {
     } catch (MissingServerContextException e) {
       // analytics server endpoint details missing
     }
-
-
   }
 }
 
