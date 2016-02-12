@@ -94,6 +94,9 @@ public class AnalyticsAPI {
         return appMetadata;
     }
 
+    public void log(String message, String metadata) {
+      log(message, new JSONObject(metadata));
+    }
 
     public void log(String message, JSONObject metadata) {
         JSONObject logObject = new JSONObject();
