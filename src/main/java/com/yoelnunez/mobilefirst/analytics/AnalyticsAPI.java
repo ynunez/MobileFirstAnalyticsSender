@@ -32,6 +32,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 public class AnalyticsAPI {
 
@@ -111,7 +112,10 @@ public class AnalyticsAPI {
         logObject.put("level", "ANALYTICS");
         logObject.put("pkg", "wl.analytics");
 
-        String timestamp = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss:SS").format(System.currentTimeMillis());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss:SS'Z'");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+
+        String timestamp = simpleDateFormat.format(System.currentTimeMillis());
         logObject.put("timestamp", timestamp);
 
         instanceLogs.put(logObject);
