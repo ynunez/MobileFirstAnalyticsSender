@@ -6,7 +6,7 @@ Sending custom analytics from your MobileFirst Platform apps to the MobileFirst 
 Follow these steps to send custom analytics from your own applications
 
 ### Building the jar
-This is a gradle based project so to build make sure you have gradle installed and as part of your executable path. To build, navigate into the root directory of the project and run `gradle build`. After a successful build, the generated .jar will be located in `./build/libs/analytics-api-0.1.jar`.
+This is a gradle based project so to build make sure you have gradle installed and as part of your executable path. To build, navigate into the root directory of the project and run `gradle build`. After a successful build, the generated .jar will be located in `./build/libs/analytics-api-0.1.1.jar`.
 
 ### Instrumenting your application
 
@@ -23,7 +23,7 @@ import org.json.JSONObject;
 public class MyCustomApplication {
   public static void main(String[] args) {
     // should match the value of the `wl.analytics.url` jndi property in your server.xml file
-    String analyticsEndpoint = "http://yoelnunez.com/analytics/v2"
+    String analyticsEndpoint = "http://yoelnunez.com/analytics-service/v2"
 
     // IMPORTANT: setting the analytics server info
     AnalyticsAPI.setContext(new ServerContext(analyticsEndpoint, "myUsername", "myPassword"));
