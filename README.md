@@ -23,7 +23,7 @@ import org.json.JSONObject;
 public class MyCustomApplication {
   public static void main(String[] args) {
     // should match the value of the `wl.analytics.url` jndi property in your server.xml file
-    String analyticsEndpoint = "http://yoelnunez.com/analytics/v2"
+    String analyticsEndpoint = "http://yoelnunez.com/analytics-service/v2"
 
     // IMPORTANT: setting the analytics server info
     AnalyticsAPI.setContext(new ServerContext(analyticsEndpoint, "myUsername", "myPassword"));
