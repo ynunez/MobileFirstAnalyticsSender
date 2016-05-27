@@ -112,11 +112,7 @@ public class AnalyticsAPI {
         logObject.put("level", "ANALYTICS");
         logObject.put("pkg", "wl.analytics");
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy'T'HH:mm:ss:SS'Z'");
-        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
-
-        String timestamp = simpleDateFormat.format(System.currentTimeMillis());
-        logObject.put("timestamp", timestamp);
+        logObject.put("timestamp", System.currentTimeMillis());
 
         instanceLogs.put(logObject);
     }
