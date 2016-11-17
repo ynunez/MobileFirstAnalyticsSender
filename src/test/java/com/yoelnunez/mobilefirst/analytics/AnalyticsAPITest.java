@@ -62,7 +62,7 @@ public class AnalyticsAPITest {
     @Test
     public void testInitSettingContext() throws MissingServerContextException {
         AnalyticsAPI.setContext(serverContext);
-        AnalyticsAPI api = AnalyticsAPI.createInstance(appContext);
+        AnalyticsAPI api = AnalyticsAPI.createInstance(appContext, true);
 
         org.junit.Assert.assertNotNull("analytics api should be initialized", api);
     }
@@ -70,7 +70,7 @@ public class AnalyticsAPITest {
     @Test
     public void testLogCount() throws MissingServerContextException {
         AnalyticsAPI.setContext(serverContext);
-        AnalyticsAPI api = AnalyticsAPI.createInstance(appContext);
+        AnalyticsAPI api = AnalyticsAPI.createInstance(appContext, true);
 
         api.log("hello-world1", new JSONObject());
         api.log("hello-world2", new JSONObject());
@@ -81,7 +81,7 @@ public class AnalyticsAPITest {
     @Test
     public void testLogMetadata() throws MissingServerContextException {
         AnalyticsAPI.setContext(serverContext);
-        AnalyticsAPI api = AnalyticsAPI.createInstance(appContext);
+        AnalyticsAPI api = AnalyticsAPI.createInstance(appContext, true);
 
         JSONObject log = new JSONObject();
         log.put("myCustomKey", "helloValueForKey");
@@ -119,7 +119,7 @@ public class AnalyticsAPITest {
         AnalyticsAPI.setHttpClient(null);
 
         AnalyticsAPI.setContext(serverContext);
-        AnalyticsAPI.createInstance(appContext);
+        AnalyticsAPI.createInstance(appContext, true);
 
         org.junit.Assert.assertNotNull("analytics api should be initialized", AnalyticsAPI.getHttpClient());
     }
